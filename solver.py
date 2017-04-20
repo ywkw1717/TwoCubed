@@ -20,6 +20,8 @@ from cube import *
 from node import *
 import copy
 
+# procedure (stack)
+pastProcedure= []
 
 def solve(_cube):
   root = Node()
@@ -41,8 +43,19 @@ def solve(_cube):
 
   show_tree_dfs(root)
 
-#     cube1 = copy.deepcopy(_cube)
-#     cube1.rRotation()
+
+  cube1 = copy.deepcopy(_cube)
+  cube1.rRotation()
+  pastProcedure.append('R')
+
+  print cube1.getLayout()
+  print pastProcedure
+
+  cube1.rprimeRotation()
+  pastProcedure.pop(0)
+
+  print cube1.getLayout()
+  print pastProcedure
 #
 #     cube2 = copy.deepcopy(_cube)
 #     cube2.rprimeRotation()
