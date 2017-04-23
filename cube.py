@@ -285,3 +285,41 @@ class Cube:
         tmp = self.layout[color1]
         self.layout[color1] = self.layout[color2]
         self.layout[color2] = tmp
+
+    def rotation(self, string):
+        if (string is 'R'):
+            self.rRotation()
+        elif (string is 'R\''):
+            self.rprimeRotation()
+        elif (string is 'R2'):
+            self.r2Rotation()
+        elif (string is 'L'):
+            self.lRotation()
+        elif (string is 'L\''):
+            self.lprimeRotation()
+        elif (string is 'L2':
+            self.l2Rotation()
+        elif (string is 'U'):
+            self.uRotation()
+        elif (string is 'U\''):
+            self.uprimeRotation()
+        elif (string is 'U2'):
+            self.u2Rotation()
+        elif (string is 'D'):
+            self.dRotation()
+        elif (string is 'D\''):
+            self.dprimeRotation()
+        elif (string is 'D2'):
+            self.d2Rotation()
+        elif (string is 'F'):
+            self.fRotation()
+        elif (string is 'F\''):
+            self.fprimeRotation()
+        elif (string is 'F2'):
+            self.f2Rotation()
+        elif (string is 'B'):
+            self.bRotation()
+        elif (string is 'B\''):
+            self.bprimeRotation()
+        elif (string is 'B2'):
+            self.b2Rotation()
