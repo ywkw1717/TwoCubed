@@ -18,81 +18,48 @@
 
 from cube import *
 from node import *
+import list_generator as gen
 import copy
 
 # procedure (stack)
 pastProcedure= []
 
-def solve(_cube):
-  root = Node()
-  # node1 = Node()
-  # rootNode.setChild(node1)
-  # node1.setNext(node2)
-  append('root', None, root)
-  node1 = Node()
-  node2 = Node()
-  node3 = Node()
-  node4 = Node()
-  node5 = Node()
+def solve(_cube, depth):
+  cube = _cube
+  print cube.getLayout()
+  # cube1 = copy.deepcopy(_cube)
 
-  append('node1', root, node1)
-  append('node1-1', node1, node2)
-  append('node1-2', node1, node3)
-  append('node2', root, node4)
-  append('node2-1', node2, node5)
+  # print cube.getLayout()
+  # print pastProcedure
+  #
+  # cube.rprimeRotation()
+  # pastProcedure.pop(0)
+  #
+  # print cube.getLayout()
+  # print pastProcedure
 
-  show_tree_dfs(root)
+  gen.recursive(gen.proc, gen.WORD_NUM)
 
+  for i in gen.procedure:
+      print i
+      cube.rotation('R\'')
+      # cube.rotation(i)
+      print cube.getLayout()
 
-  cube1 = copy.deepcopy(_cube)
-  cube1.rRotation()
-  pastProcedure.append('R')
+def dfs(_cube, _depth):
+    cube = _cube
+    depth = _depth + 1
 
-  print cube1.getLayout()
-  print pastProcedure
+    if (''.join(cube.getLayout()) == 'UUUULLLLFFFFRRRRBBBBDDDD'):
+        return True
+    elif (depth == 11):
+        pastProcedure.pop(0)
+        return cube.rprimeRotation()
+    else:
+        cube.rRotation()
+        pastProcedure.append('R')
 
-  cube1.rprimeRotation()
-  pastProcedure.pop(0)
-
-  print cube1.getLayout()
-  print pastProcedure
-#
-#     cube2 = copy.deepcopy(_cube)
-#     cube2.rprimeRotation()
-#
-#     cube3 = copy.deepcopy(_cube)
-#     cube3.r2Rotation()
-#
-#     cube4 = copy.deepcopy(_cube)
-#     cube4.uRotation()
-#
-#     cube5 = copy.deepcopy(_cube)
-#     cube5.uprimeRotation()
-#
-#     cube6 = copy.deepcopy(_cube)
-#     cube6.u2Rotation()
-#
-#     cube7 = copy.deepcopy(_cube)
-#     cube7.fRotation()
-#
-#     cube8 = copy.deepcopy(_cube)
-#     cube8.fprimeRotation()
-#
-#     cube9 = copy.deepcopy(_cube)
-#     cube9.f2Rotation()
-#
-#     for i in range(1, 9):
-#         for j in range(1, 9):
-#             for k in range(1, 9):
-#                 for l in range(1, 9):
-#                     for m in range(1, 9):
-#                         for n in range(1, 9):
-#                             for o in range(1, 9):
-#                                 for p in range(1, 9):
-#                                     for q in range(1, 9):
-#
-#     print cube1.getLayout()
-#     print cube2.getLayout()
+        dfs(cube)
 
 
 def main():
@@ -138,7 +105,7 @@ def main():
     # print '\n' + 'total: ' + str(count)
     # print '\n' + 'procedure: ' + cube.getProcedure()
 
-    solve(cube)
+    solve(cube, 11)
 
 if __name__ == '__main__':
     main()
