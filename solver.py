@@ -20,31 +20,70 @@ from cube import *
 from node import *
 import list_generator as gen
 import copy
+import sys
+import re
+from tqdm import tqdm
 
-# procedure (stack)
+# Procedure list
 pastProcedure= []
 
+# The pattern that half of the bottoms finish
+pattern = re.compile('......LL..FF..RR..BBDDDD|UUUULL..FF..RR..BB......|U.U.LLLLF.F......B.BD.D.|U.U..L.LFFFFR.R.....DD..|.U.U.....F.FRRRRB.B..D.D|UU..L.L......R.RBBBB..DD')
+
 def solve(_cube, depth):
-  cube = _cube
-  print cube.getLayout()
-  # cube1 = copy.deepcopy(_cube)
+    cube = _cube
+    print cube.getLayout()
 
-  # print cube.getLayout()
-  # print pastProcedure
-  #
-  # cube.rprimeRotation()
-  # pastProcedure.pop(0)
-  #
-  # print cube.getLayout()
-  # print pastProcedure
+    print 'list generating...'
+    procedure = gen.generator(gen.proc, gen.WORD_NUM)
+    print '-------------------------'
+    count = 1
 
-  gen.recursive(gen.proc, gen.WORD_NUM)
+    for i in procedure:
+        cube1= copy.deepcopy(cube)
+        procedure_split = i.split(' ')
+        pastProcedure.append(i)
 
-  for i in gen.procedure:
-      print i
-      cube.rotation('R\'')
-      # cube.rotation(i)
-      print cube.getLayout()
+        sys.stdout.write('\rnum of rotation: %d' % count)
+        sys.stdout.flush()
+
+        for j in procedure_split:
+            cube1.rotation(j)
+
+            if pattern.findall(''.join(cube1.getLayout())):
+                print "\n\n\nhalf FOUND!!!\n\n\n"
+                print ''.join(pastProcedure)
+                return
+
+                for k in procedure:
+                    cube2 = copy.deepcopy(cube1)
+                    procedure_split = i.split(' ')
+                    pastProcedure.append(k)
+
+                    print count
+
+                    for l in procedure_split:
+                        cube1.rotation(l)
+
+                        if (''.join(cube2.getLayout()) == 'UUUULLLLFFFFRRRRBBBBDDDD'):
+
+                            print "FOUND!!!"
+                            print ''.join(pastProcedure)
+
+                            return
+                        # else:
+                        #     cube2.rotation(l)
+
+                    pastProcedure.remove(k)
+                    count = count + 1
+            # else:
+            #     cube1.rotation(j)
+
+        pastProcedure.remove(i)
+        count = count + 1
+
+    print "Not Found..."
+
 
 def dfs(_cube, _depth):
     cube = _cube
@@ -84,26 +123,11 @@ def main():
     # print 'Input the first state >>',
     #
     # cube = Cube('BUFFDDLLRRDFURDFBRLUBLBU')
+    cube = Cube('FFFRLLBUDUBDFDRBRULLRBUD')
+    # cube = Cube('DUDURRLLFBFBLLRRFBFBDUDU')
     # layout = raw_input()
-    cube = Cube('UUUULLLLFFFFRRRRBBBBDDDD')
     # cube = Cube(layout)
-
-    # rotation Test
-    # count = 1
-    # while(True):
-    #     print ''.join(cube.getLayout())
-    #     cube.rRotation()
-    #     cube.lRotation()
-    #     cube.uprimeRotation()
-    #
-    #     if (''.join(cube.getLayout()) == 'UUUULLLLFFFFRRRRBBBBDDDD'):
-    #         break
-    #     else:
-    #         count = count + 1
-    #
-    # print '\n' + ''.join(cube.getLayout())
-    # print '\n' + 'total: ' + str(count)
-    # print '\n' + 'procedure: ' + cube.getProcedure()
+    # cube = Cube('UUUULRLLBFFFRLRRFBBBDDDD')
 
     solve(cube, 11)
 
