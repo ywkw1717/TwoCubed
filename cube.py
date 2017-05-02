@@ -185,7 +185,7 @@ class Cube:
         self.swapColor(U3, D2)  # U3 - D2
         self.swapColor(U4, D1)  # U4 - D1
         self.swapColor(U3, R1)  # U3 - R1
-        self.swapColor(U4, R2)  # U4 - R2
+        self.swapColor(U4, R3)  # U4 - R3
 
         self.leftRotation('F')
 
