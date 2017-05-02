@@ -23,7 +23,7 @@ class Cube:
             inifile.get('settings', 'B'),
             inifile.get('settings', 'D')
         ]
-        self.procedure = ''
+        self.procedure = []
 
     def getLayout(self):
         return self.layout
@@ -35,7 +35,7 @@ class Cube:
         return self.procedure
 
     def setProcedure(self, proc):
-        self.procedure = self.procedure + proc
+        self.procedure.append(proc)
 
     # 90 degrees right on R side
     def rRotation(self):
