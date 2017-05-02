@@ -230,53 +230,53 @@ class Cube:
         self.setProcedure('B2')
 
     def rightRotation(self, color):
-        if (color is 'U'):
+        if (color == 'U'):
             self.swapColor(U1, U2)
             self.swapColor(U1, U4)
             self.swapColor(U1, U3)
-        elif (color is 'L'):
+        elif (color == 'L'):
             self.swapColor(L1, L2)
             self.swapColor(L1, L4)
             self.swapColor(L1, L3)
-        elif (color is 'F'):
+        elif (color == 'F'):
             self.swapColor(F1, F2)
             self.swapColor(F1, F4)
             self.swapColor(F1, F3)
-        elif (color is 'R'):
+        elif (color == 'R'):
             self.swapColor(R1, R2)
             self.swapColor(R1, R4)
             self.swapColor(R1, R3)
-        elif (color is 'B'):
+        elif (color == 'B'):
             self.swapColor(B1, B2)
             self.swapColor(B1, B4)
             self.swapColor(B1, B3)
-        elif (color is 'D'):
+        elif (color == 'D'):
             self.swapColor(D1, D2)
             self.swapColor(D1, D4)
             self.swapColor(D1, D3)
 
     def leftRotation(self, color):
-        if (color is 'U'):
+        if (color == 'U'):
             self.swapColor(U1, U3)
             self.swapColor(U1, U4)
             self.swapColor(U1, U2)
-        elif (color is 'L'):
+        elif (color == 'L'):
             self.swapColor(L1, L3)
             self.swapColor(L1, L4)
             self.swapColor(L1, L2)
-        elif (color is 'F'):
+        elif (color == 'F'):
             self.swapColor(F1, F3)
             self.swapColor(F1, F4)
             self.swapColor(F1, F2)
-        elif (color is 'R'):
+        elif (color == 'R'):
             self.swapColor(R1, R3)
             self.swapColor(R1, R4)
             self.swapColor(R1, R2)
-        elif (color is 'B'):
+        elif (color == 'B'):
             self.swapColor(B1, B3)
             self.swapColor(B1, B4)
             self.swapColor(B1, B2)
-        elif (color is 'D'):
+        elif (color == 'D'):
             self.swapColor(D1, D3)
             self.swapColor(D1, D4)
             self.swapColor(D1, D2)
@@ -287,39 +287,39 @@ class Cube:
         self.layout[color2] = tmp
 
     def rotation(self, string):
-        if (string is 'R'):
+        if (string == 'R'):
             self.rRotation()
-        elif (string is 'R\''):
+        elif (string == 'R\''):
             self.rprimeRotation()
-        elif (string is 'R2'):
+        elif (string == 'R2'):
             self.r2Rotation()
-        elif (string is 'L'):
+        elif (string == 'L'):
             self.lRotation()
-        elif (string is 'L\''):
+        elif (string == 'L\''):
             self.lprimeRotation()
-        elif (string is 'L2'):
+        elif (string == 'L2'):
             self.l2Rotation()
-        elif (string is 'U'):
+        elif (string == 'U'):
             self.uRotation()
-        elif (string is 'U\''):
+        elif (string == 'U\''):
             self.uprimeRotation()
-        elif (string is 'U2'):
+        elif (string == 'U2'):
             self.u2Rotation()
-        elif (string is 'D'):
+        elif (string == 'D'):
             self.dRotation()
-        elif (string is 'D\''):
+        elif (string == 'D\''):
             self.dprimeRotation()
-        elif (string is 'D2'):
+        elif (string == 'D2'):
             self.d2Rotation()
-        elif (string is 'F'):
+        elif (string == 'F'):
             self.fRotation()
-        elif (string is 'F\''):
+        elif (string == 'F\''):
             self.fprimeRotation()
-        elif (string is 'F2'):
+        elif (string == 'F2'):
             self.f2Rotation()
-        elif (string is 'B'):
+        elif (string == 'B'):
             self.bRotation()
-        elif (string is 'B\''):
+        elif (string == 'B\''):
             self.bprimeRotation()
-        elif (string is 'B2'):
+        elif (string == 'B2'):
             self.b2Rotation()
