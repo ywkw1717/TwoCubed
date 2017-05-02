@@ -297,7 +297,7 @@ class Cube:
             self.lRotation()
         elif (string is 'L\''):
             self.lprimeRotation()
-        elif (string is 'L2':
+        elif (string is 'L2'):
             self.l2Rotation()
         elif (string is 'U'):
             self.uRotation()
