@@ -65,8 +65,24 @@ class Cube:
 
     # 180 degrees right on R side
     def r2Rotation(self):
-        self.rRotation()
-        self.rRotation()
+        self.swapColor(F2, U2)  # F2 - U2
+        self.swapColor(F4, U4)  # F4 - U4
+        self.swapColor(F2, D2)  # F2 - D2
+        self.swapColor(F4, D4)  # F4 - D4
+        self.swapColor(D2, B3)  # D2 - B3
+        self.swapColor(D4, B1)  # D4 - B1
+
+        self.rightRotation('R')
+
+        self.swapColor(F2, U2)  # F2 - U2
+        self.swapColor(F4, U4)  # F4 - U4
+        self.swapColor(F2, D2)  # F2 - D2
+        self.swapColor(F4, D4)  # F4 - D4
+        self.swapColor(D2, B3)  # D2 - B3
+        self.swapColor(D4, B1)  # D4 - B1
+
+        self.rightRotation('R')
+
         self.setProcedure('R2')
 
     # 90 degrees right on L side
@@ -97,8 +113,24 @@ class Cube:
 
     # 180 degrees right on L side
     def l2Rotation(self):
-        self.lRotation()
-        self.lRotation()
+        self.swapColor(U1, B4)  # U1 - B4
+        self.swapColor(U3, B2)  # U3 - B2
+        self.swapColor(B2, F3)  # B2 - F3
+        self.swapColor(B4, F1)  # B4 - F1
+        self.swapColor(B2, D3)  # B2 - D3
+        self.swapColor(B4, D1)  # B4 - D1
+
+        self.rightRotation('L')
+
+        self.swapColor(U1, B4)  # U1 - B4
+        self.swapColor(U3, B2)  # U3 - B2
+        self.swapColor(B2, F3)  # B2 - F3
+        self.swapColor(B4, F1)  # B4 - F1
+        self.swapColor(B2, D3)  # B2 - D3
+        self.swapColor(B4, D1)  # B4 - D1
+
+        self.rightRotation('L')
+
         self.setProcedure('L2')
 
     # 90 degrees right on U side
@@ -129,8 +161,24 @@ class Cube:
 
     # 180 degrees right on U side
     def u2Rotation(self):
-        self.uRotation()
-        self.uRotation()
+        self.swapColor(L1, F1)  # L1 - F1
+        self.swapColor(L2, F2)  # L2 - F2
+        self.swapColor(F1, B1)  # F1 - B1
+        self.swapColor(F2, B2)  # F2 - B2
+        self.swapColor(F1, R1)  # F1 - R1
+        self.swapColor(F2, R2)  # F2 - R2
+
+        self.rightRotation('U')
+
+        self.swapColor(L1, F1)  # L1 - F1
+        self.swapColor(L2, F2)  # L2 - F2
+        self.swapColor(F1, B1)  # F1 - B1
+        self.swapColor(F2, B2)  # F2 - B2
+        self.swapColor(F1, R1)  # F1 - R1
+        self.swapColor(F2, R2)  # F2 - R2
+
+        self.rightRotation('U')
+
         self.setProcedure('U2')
 
     # 90 degrees right on D side
@@ -161,8 +209,24 @@ class Cube:
 
     # 180 degrees right on D side
     def d2Rotation(self):
-        self.dRotation()
-        self.dRotation()
+        self.swapColor(F3, R3)  # F3 - R3
+        self.swapColor(F4, R4)  # F4 - R4
+        self.swapColor(F3, B3)  # F3 - B3
+        self.swapColor(F4, B4)  # F4 - B4
+        self.swapColor(F3, L3)  # F3 - L3
+        self.swapColor(F4, L4)  # F4 - L4
+
+        self.rightRotation('D')
+
+        self.swapColor(F3, R3)  # F3 - R3
+        self.swapColor(F4, R4)  # F4 - R4
+        self.swapColor(F3, B3)  # F3 - B3
+        self.swapColor(F4, B4)  # F4 - B4
+        self.swapColor(F3, L3)  # F3 - L3
+        self.swapColor(F4, L4)  # F4 - L4
+
+        self.rightRotation('D')
+
         self.setProcedure('D2')
 
     # 90 degrees right on F side
@@ -193,8 +257,24 @@ class Cube:
 
     # 180 degrees right on F side
     def f2Rotation(self):
-        self.fRotation()
-        self.fRotation()
+        self.swapColor(L2, U4)  # L2 - U4
+        self.swapColor(L4, U3)  # L4 - U3
+        self.swapColor(L2, R3)  # L2 - R3
+        self.swapColor(L4, R1)  # L4 - R1
+        self.swapColor(L2, D1)  # L2 - D1
+        self.swapColor(L4, D2)  # L4 - D2
+
+        self.rightRotation('F')
+
+        self.swapColor(L2, U4)  # L2 - U4
+        self.swapColor(L4, U3)  # L4 - U3
+        self.swapColor(L2, R3)  # L2 - R3
+        self.swapColor(L4, R1)  # L4 - R1
+        self.swapColor(L2, D1)  # L2 - D1
+        self.swapColor(L4, D2)  # L4 - D2
+
+        self.rightRotation('F')
+
         self.setProcedure('F2')
 
     # 90 degrees right on B side
@@ -225,8 +305,24 @@ class Cube:
 
     # 180 degrees right on B side
     def b2Rotation(self):
-        self.bRotation()
-        self.bRotation()
+        self.swapColor(U1, L3)  # U1 - L3
+        self.swapColor(U2, L1)  # U2 - L1
+        self.swapColor(U1, D4)  # U1 - D4
+        self.swapColor(U2, D3)  # U2 - D3
+        self.swapColor(U1, R2)  # U1 - R2
+        self.swapColor(U2, R4)  # U2 - R4
+
+        self.rightRotation('B')
+
+        self.swapColor(U1, L3)  # U1 - L3
+        self.swapColor(U2, L1)  # U2 - L1
+        self.swapColor(U1, D4)  # U1 - D4
+        self.swapColor(U2, D3)  # U2 - D3
+        self.swapColor(U1, R2)  # U1 - R2
+        self.swapColor(U2, R4)  # U2 - R4
+
+        self.rightRotation('B')
+
         self.setProcedure('B2')
 
     def rightRotation(self, color):
