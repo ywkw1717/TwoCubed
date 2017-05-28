@@ -17,7 +17,6 @@
 #################################
 
 from cube import *
-from node import *
 import list_generator as gen
 import copy
 import sys
@@ -66,10 +65,8 @@ def solve(_cube, depth):
                         cube1.rotation(l)
 
                         if (''.join(cube2.getLayout()) == 'UUUULLLLFFFFRRRRBBBBDDDD'):
-
                             print "FOUND!!!"
                             print ''.join(pastProcedure)
-
                             return
                         # else:
                         #     cube2.rotation(l)
